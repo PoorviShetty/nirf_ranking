@@ -74,7 +74,7 @@
 								<p class="textBelow"><span id="demo_tlr4" class="demo_tlr"></></span></p>
 							</div>
 
-							<input type="text" name="tlr" id="tlr_one" class="points" style="width : 8%;height:30px">
+							<input type="text" name="tlr" id="tlr_one" class="points" style="width : 8%;height:30px" value='{{values[0]}}'>
 							
 						</div>
 						
@@ -103,7 +103,7 @@
 						 <input type="range" min="1" max="10" name="rpc4" class="slider" value="0" id="myRangeRPC4">
 						 <p class="textBelow"><span id="demo_rpc4" class="demo_rpc"></span></p>
 						</div class="flex-row">
-						 <input type="text" name="rpc" id="rpc_one" class="points" style="width : 8%;height:30px">
+						 <input type="text" name="rpc" id="rpc_one" class="points" style="width : 8%;height:30px" value='{{values[1]}}'>
 						 </div>
 						
 						 <div class = "go_display">
@@ -128,7 +128,7 @@
 						 <input type="range" min="1" max="20" name="go4" class="slider" value="0" id="myRangeGO4">
 						 <p class="textBelow"><span id="demo_go4" class="demo_go"></span></p>
 						</div>
-						 <input type="text" name="go" id="go_one" class="points" style="width : 8%;height:30px">
+						 <input type="text" name="go" id="go_one" class="points" style="width : 8%;height:30px" value='{{values[2]}}'>
 						 </div>
 
 
@@ -155,7 +155,7 @@
 							<input type="range" min="1" max="20" name="oi4" class="slider" value="0" id="myRangeOI4">
 						 <p class="textBelow"><span id="demo_oi4" class="demo_oi"></span></p>
 						</div>
-						 <input type="text" name="oi" id="oi_one" class="points" style="width : 8%;height:30px">
+						 <input type="text" name="oi" id="oi_one" class="points" style="width : 8%;height:30px" value='{{values[3]}}'>
 						 </div>
 
 						 <div class = "ppn_display">
@@ -165,7 +165,7 @@
 								<input type="range" min="1" max="100" name="ppn1" class="slider" value="0" id="myRangePPN1">
 							 <p class="textBelow"><span id="demo_ppn1" class="demo_ppn"></span></p>
 							</div>
-							<input type="text" name="ppn"  id="ppn_one" class = "ppn_type points">
+							<input type="text" name="ppn"  id="ppn_one" class = "ppn_type points" value='{{values[4]}}'>
 			
 						 
 						 </div> <br></br>
@@ -323,7 +323,6 @@
 		<div class="results1 prediction">
 		
 				<b><h3 style="font-family: Times New Roman, Times, serif;color:#ce55bf;">{{prediction}}</h3></b>
-		
 		</div>
 
 		<table>

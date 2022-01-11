@@ -36,15 +36,15 @@
 				<div class="ml-container">
 					<form action="{{ url_for('predictOver') }}" method="POST">
                         <label>Enter the valid score of TLR &nbsp;</label>
-						<input class="form-input" type="text" name="tlr_o" placeholder="TLR Score out of 100">  <br>
+						<input class="form-input" type="text" name="tlr_o" placeholder="TLR Score out of 100" value='{{values[0]}}'>  <br>
 						<label>Enter the valid score of RPC&nbsp;</label>
-						<input class="form-input" type="text" name="rpc_o" placeholder="RPC score out of 100"> <br>
+						<input class="form-input" type="text" name="rpc_o" placeholder="RPC score out of 100" value='{{values[1]}}'> <br>
 						<label>Enter the valid score of GO &nbsp;&nbsp;</label>
-						<input class="form-input" type="text" name="go_o" placeholder="GO score out of 100"> <br>
+						<input class="form-input" type="text" name="go_o" placeholder="GO score out of 100" value='{{values[2]}}'> <br>
 						<label>Enter the valid score of OI &nbsp;&nbsp;&nbsp;&nbsp;</label>
-						<input class="form-input" type="text" name="oi_o" placeholder="OI score out of 100"><br>
+						<input class="form-input" type="text" name="oi_o" placeholder="OI score out of 100" value='{{values[3]}}'><br>
 						<label>Enter the valid score of PPN &nbsp;</label>
-						<input class="form-input" type="text" name="perception_o" placeholder="PERCEPTION score out of 100"> <br></br>
+						<input class="form-input" type="text" name="perception_o" placeholder="PERCEPTION score out of 100" value='{{values[4]}}'> <br></br>
 				
 
 						<input type="submit" class="my-cta-button" value="Predict">

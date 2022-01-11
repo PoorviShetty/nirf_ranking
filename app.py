@@ -528,15 +528,15 @@ def home():
 
 @app.route('/engg/')
 def engg():
-    return render_template('engg.html')
+    return render_template('engg.html', values=[])
 
 @app.route('/university/')
 def university():
-    return render_template('university.html')
+    return render_template('university.html', values=[])
 
 @app.route('/overall/')
 def overall():
-    return render_template('overall.html')
+    return render_template('overall.html', values=[])
 
 @app.route('/index')
 def index():
@@ -579,11 +579,11 @@ def predict():
         if x<=200:
             rank_engg_para.append(ranges)
             df_engg['RANK']=rank_engg_para
-            return render_template('engg.html', prediction="The predicted rank might be in range : " + ranges,tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'])
+            return render_template('engg.html', prediction="The predicted rank might be in range : " + ranges,tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr, rpc, go, oi, perception])))
         else:
             rank_engg_para.append(">150")
             df_engg['RANK']=rank_engg_para            
-            return render_template('engg.html',prediction="The rank for this score is greater than 200",tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'])
+            return render_template('engg.html',prediction="The rank for this score is greater than 200",tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr, rpc, go, oi, perception])))
         ##return render_template('result.html', prediction=data.shape)
 
 
@@ -619,11 +619,11 @@ def predictUni():
         if x1<=140:
             rank_uni_para.append(ranges2)
             df['RANK']=rank_uni_para
-            return render_template('university.html', prediction="The predicted rank might be in range : " + ranges2,tables=[df.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'])
+            return render_template('university.html', prediction="The predicted rank might be in range : " + ranges2,tables=[df.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr_u, rpc_u, go_u, oi_u, perception_u])))
         else:
             rank_uni_para.append(">150")
             df['RANK']=rank_uni_para            
-            return render_template('university.html',prediction="The rank for this score is greater than 150",tables=[df.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'])            
+            return render_template('university.html',prediction="The rank for this score is greater than 150",tables=[df.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr_u, rpc_u, go_u, oi_u, perception_u])))            
         
 
 
@@ -663,11 +663,11 @@ def predictOver():
         if x2<=140:
             rank_over_para.append(ranges3)
             df_over['RANK']=rank_over_para
-            return render_template('overall.html', prediction="The predicted rank might be in range : " + ranges3,tables=[df_over.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'])
+            return render_template('overall.html', prediction="The predicted rank might be in range : " + ranges3,tables=[df_over.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr_o, rpc_o, go_o, oi_o, perception_o])))
         else:
             rank_over_para.append(">150")
             df_over['RANK']=rank_over_para            
-            return render_template('overall.html',prediction="The rank for this score is greater than 150",tables=[df_over.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'])
+            return render_template('overall.html',prediction="The rank for this score is greater than 150",tables=[df_over.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr_o, rpc_o, go_o, oi_o, perception_o])))
 
 if __name__ == '__main__':
 	app.run(debug=True)
