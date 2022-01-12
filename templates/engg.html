@@ -55,22 +55,22 @@
 							
 							<div class="flex-row">
 								<p class="textTop">SS</p>
-								<input type="range" min="1" max="20" name="tlr1" class="slider" value="0" id="myRangeTLR1">
+								<input type="range" min="1" max="20" name="tlr1" class="slider" value="{{sliderVal[1]}}" id="myRangeTLR1">
 								<p class="textBelow"><span id="demo_tlr1" class="demo_tlr"></span></p>
 							</div>
 							<div class="flex-row">
 								<p class="textTop">FSR</p>
-								<input type="range" min="1" max="30" name="tlr1" class="slider" value="0" id="myRangeTLR2">
+								<input type="range" min="1" max="30" name="tlr1" class="slider" value="{{sliderVal[2]}}" id="myRangeTLR2">
 								<p class="textBelow"><span id="demo_tlr2" class="demo_tlr"></></span></p>
 							</div>
 							<div class="flex-row">
 								<p class="textTop">FQE</p>
-								<input type="range" min="1" max="20" name="tlr1" class="slider" value="0" id="myRangeTLR3">
+								<input type="range" min="1" max="20" name="tlr1" class="slider" value="{{sliderVal[3]}}" id="myRangeTLR3">
 								<p class="textBelow"><span id="demo_tlr3" class="demo_tlr"></></span></p>
 							</div>
 							<div class="flex-row">
 								<p class="textTop">FRU</p>
-								<input type="range" min="1" max="30" name="tlr1" class="slider" value="0" id="myRangeTLR4">
+								<input type="range" min="1" max="30" name="tlr1" class="slider" value="{{sliderVal[4]}}" id="myRangeTLR4">
 								<p class="textBelow"><span id="demo_tlr4" class="demo_tlr"></></span></p>
 							</div>
 
@@ -85,22 +85,22 @@
 							<label class="boxHeading">Enter the valid score of RPC&nbsp;</label><br></br>
 						 <div class="flex-row">
 							<p class="textTop">PU</p>
-							 <input type="range" min="1" max="35" name="rpc1" class="slider" value="0" id="myRangeRPC1">
+							 <input type="range" min="1" max="35" name="rpc1" class="slider" value="{{sliderVal[6]}}" id="myRangeRPC1">
 						  <p class="textBelow"><span id="demo_rpc1" class="demo_rpc"></span></p>
 						 </div>
 						 <div class="flex-row">
 							<p class="textTop">QP</p>
-							 <input type="range" min="1" max="40" name="rpc2" class="slider" value="0" id="myRangeRPC2">
+							 <input type="range" min="1" max="40" name="rpc2" class="slider" value="{{sliderVal[7]}}" id="myRangeRPC2">
 						 <p class="textBelow"><span id="demo_rpc2" class="demo_rpc"></span></p>
 						 </div>
 						 <div class="flex-row">
 							<p class="textTop">IPR</p>
-						<input type="range" min="1" max="15" name="rpc3" class="slider" value="0" id="myRangeRPC3">
+						<input type="range" min="1" max="15" name="rpc3" class="slider" value="{{sliderVal[8]}}" id="myRangeRPC3">
 						 <p class="textBelow"><span id="demo_rpc3" class="demo_rpc"></span></p>
 						 </div>
 						 <div class="flex-row">
 							<p class="textTop">FPPP</p>
-						 <input type="range" min="1" max="10" name="rpc4" class="slider" value="0" id="myRangeRPC4">
+						 <input type="range" min="1" max="10" name="rpc4" class="slider" value="{{sliderVal[9]}}" id="myRangeRPC4">
 						 <p class="textBelow"><span id="demo_rpc4" class="demo_rpc"></span></p>
 						</div class="flex-row">
 						 <input type="text" name="rpc" id="rpc_one" class="points" style="width : 8%;height:30px" value='{{values[1]}}'>
@@ -110,22 +110,22 @@
 							<label class="boxHeading">Enter the valid score of GO &nbsp;&nbsp;</label><br></br>
 							<div class="flex-row">
 								<p class="textTop">GPH</p>
-						 <input type="range" min="1" max="40" name="go1" class="slider" value="0" id="myRangeGO1">
+						 <input type="range" min="1" max="40" name="go1" class="slider" value="{{sliderVal[11]}}" id="myRangeGO1">
 						  <p class="textBelow"><span id="demo_go1" class="demo_go"></span></p>
 							</div>
 							<div class="flex-row">
 								<p class="textTop">GUE</p>
-						  <input type="range" min="1" max="15" name="go2" class="slider" value="0" id="myRangeGO2">
+						  <input type="range" min="1" max="15" name="go2" class="slider" value="{{sliderVal[12]}}" id="myRangeGO2">
 						 <p class="textBelow"><span id="demo_go2" class="demo_go"></span></p>
 							</div>
 							<div class="flex-row">
 								<p class="textTop">GMS</p>
-						 <input type="range" min="1" max="25" name="go3" class="slider" value="0" id="myRangeGO3">
+						 <input type="range" min="1" max="25" name="go3" class="slider" value="{{sliderVal[13]}}" id="myRangeGO3">
 						 <p class="textBelow"><span id="demo_go3" class="demo_go"></span></p>
 								</div>
 								<div class="flex-row">
 								<p class="textTop">GPHD</p>
-						 <input type="range" min="1" max="20" name="go4" class="slider" value="0" id="myRangeGO4">
+						 <input type="range" min="1" max="20" name="go4" class="slider" value="{{sliderVal[14]}}" id="myRangeGO4">
 						 <p class="textBelow"><span id="demo_go4" class="demo_go"></span></p>
 						</div>
 						 <input type="text" name="go" id="go_one" class="points" style="width : 8%;height:30px" value='{{values[2]}}'>
@@ -137,22 +137,22 @@
 
 							<div class="flex-row">
 								<p class="textTop">RD</p>
-						 <input type="range" min="1" max="30" name="oi1" class="slider" value="0" id="myRangeOI1">
+						 <input type="range" min="1" max="30" name="oi1" class="slider" value="{{sliderVal[16]}}" id="myRangeOI1">
 						 <p class="textBelow"><span id="demo_oi1" class="demo_oi"></span></p>
 						 </div>
 						 <div class="flex-row">
 							<p class="textTop">WD</p>
-							 <input type="range" min="1" max="30" name="oi2" class="slider" value="0" id="myRangeOI2">
+							 <input type="range" min="1" max="30" name="oi2" class="slider" value="{{sliderVal[17]}}" id="myRangeOI2">
 						 <p class="textBelow"><span id="demo_oi2" class="demo_oi"></span></p>
 						 </div>
 						 <div class="flex-row">
 							<p class="textTop">ESCS</p>
-							<input type="range" min="1" max="20" name="oi3" class="slider" value="0" id="myRangeOI3">
+							<input type="range" min="1" max="20" name="oi3" class="slider" value="{{sliderVal[18]}}" id="myRangeOI3">
 						 <p class="textBelow"><span id="demo_oi3" class="demo_oi"></span></p>
 						 </div>
 						 <div class="flex-row">
 							<p class="textTop">PCS</p>
-							<input type="range" min="1" max="20" name="oi4" class="slider" value="0" id="myRangeOI4">
+							<input type="range" min="1" max="20" name="oi4" class="slider" value="{{sliderVal[19]}}" id="myRangeOI4">
 						 <p class="textBelow"><span id="demo_oi4" class="demo_oi"></span></p>
 						</div>
 						 <input type="text" name="oi" id="oi_one" class="points" style="width : 8%;height:30px" value='{{values[3]}}'>
@@ -162,7 +162,7 @@
 							<label class="boxHeading">Enter the valid score of PPN &nbsp;</label><br></br>
 							<div class="flex-row">
 								<p class="textTop">PR</p>
-								<input type="range" min="1" max="100" name="ppn1" class="slider" value="0" id="myRangePPN1">
+								<input type="range" min="1" max="100" name="ppn1" class="slider" value="{{sliderVal[21]}}" id="myRangePPN1">
 							 <p class="textBelow"><span id="demo_ppn1" class="demo_ppn"></span></p>
 							</div>
 							<input type="text" name="ppn"  id="ppn_one" class = "ppn_type points" value='{{values[4]}}'>
@@ -172,7 +172,7 @@
 
 <!--end-->				</div>
 						 <div class="bottomButton">
-						
+							<input type="hidden" id="sliderValues" name="sliderValues"> 
 						<input id="totsubmit" type="submit" class="my-cta-button" value="Predict">
 
 						<br></br>
@@ -188,15 +188,24 @@
     	
     		<script>
 	
-
+	var sliderValues = {
+		TLR: [],
+		RPC: [],
+		GO: [],
+		OI: [],
+		PPN: []
+	};
 
 
 	function scoreCalculate(tots){
 	var total=0;
+	sliderValues[tots] = [];
 		for(var i=1;i<=4;i++){
-			
+			sliderValues[tots].push(parseInt(document.getElementById("myRange"+tots+String(i)).value))
+			//console.log(sliderValues)
 			total+=parseInt(document.getElementById("myRange"+tots+String(i)).value);
 		}
+		getSliderValues();
 	return total;
 	}
 
@@ -310,9 +319,15 @@
 	document.getElementById("myRangePPN1").oninput = function() {
 	document.getElementById("demo_ppn1").innerHTML = this.value;
 	document.getElementById("ppn_one").value=document.getElementById("demo_ppn1").innerHTML;
+	sliderValues['PPN'] = parseInt(document.getElementById("ppn_one").value);
+	getSliderValues();
 	}
 	
-	
+	function getSliderValues(){
+
+		document.getElementById("sliderValues").value = Object.entries(sliderValues);
+		//console.log(document.getElementById("sliderValues").value)
+	}
 
 	
 		

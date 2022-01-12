@@ -377,6 +377,7 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import pandas as pd
+import json
 
 
 # Load the  model
@@ -528,7 +529,7 @@ def home():
 
 @app.route('/engg/')
 def engg():
-    return render_template('engg.html', values=[])
+    return render_template('engg.html', values=[], sliderVal=['TLR', '1', '1', '1', '1', 'RPC', '1', '1', '1', '1', 'GO', '1', '1', '1', '1', 'OI', '1', '1', '1', '1', 'PPN', '1'])
 
 @app.route('/university/')
 def university():
@@ -556,6 +557,7 @@ def predict():
         go = float(request.form['go'])
         oi =float(request.form['oi'])
         perception = float(request.form['ppn'])
+        sliderValues = request.form['sliderValues'].split(",")
 
         score=(tlr*0.3)+(rpc*0.3)+(go*0.2)+(oi*0.1)+(perception*0.1)
         data = np.array([score]).reshape(1,-1)
@@ -579,11 +581,11 @@ def predict():
         if x<=200:
             rank_engg_para.append(ranges)
             df_engg['RANK']=rank_engg_para
-            return render_template('engg.html', prediction="The predicted rank might be in range : " + ranges,tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr, rpc, go, oi, perception])))
+            return render_template('engg.html', prediction="The predicted rank might be in range : " + ranges,tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr, rpc, go, oi, perception])), sliderVal=sliderValues)
         else:
             rank_engg_para.append(">150")
             df_engg['RANK']=rank_engg_para            
-            return render_template('engg.html',prediction="The rank for this score is greater than 200",tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr, rpc, go, oi, perception])))
+            return render_template('engg.html',prediction="The rank for this score is greater than 200",tables=[df_engg.to_html(classes='data')],titles=['.','TLR','RPC','GO','OI','PPN','RANK'], values=list(map(int, [tlr, rpc, go, oi, perception])), sliderVal=sliderValues)
         ##return render_template('result.html', prediction=data.shape)
 
 
