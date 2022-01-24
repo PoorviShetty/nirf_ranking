@@ -390,8 +390,8 @@ model = pickle.load(open(filename, 'rb'))
 model1=pickle.load(open(filename1,'rb'))
 
 
-filename_uni= 'poly_univ.pkl'
-filename_uni1='rank_model_univ.pkl'
+filename_uni= 'uni_polynomial_transform.pkl'
+filename_uni1='uni_rank_model.pkl'
 model_uni = pickle.load(open(filename_uni, 'rb'))
 model_uni1=pickle.load(open(filename_uni1,'rb'))
 
@@ -429,25 +429,25 @@ class modify1:
         
     def predict_rank_u(self,num):
         if num<0:
-            return "1 (+/- 2)"
+            return "2 (+/- 2)"
         if num<10:
             return str(num)+" (+/- 2)"
         if num<30:
             return str(num)+" (+/- 2)"
         if num<40:
-            return str(num)+" (+/- 4)"
+            return str(num)+" (+/- 2)"
         if num<50:
-            return str(num)+" (+/- 6)"
+            return str(num)+" (+/- 3)"
         if num<60:
-            return str(num)+" (+/- 7)"
+            return str(num)+" (+/- 2)"
         if num<70:
-            return str(num)+" (+/- 4)"
+            return str(num)+" (+/- 6)"
         if num<80:
-            return str(num)+" (+/- 2)"
+            return str(num)+" (+/- 7)"
         if num<90:
-            return str(num)+" (+/- 2)"
+            return str(num)+" (+/- 8)"
         else:
-            return str(num)+" (+/- 2)"
+            return str(num)+" (+/- 5)"
         
     def predict_rank_o(self,num):
         if num<0:
@@ -612,7 +612,12 @@ def predictUni():
         go_u = float(request.form['go_u'])
         oi_u =float(request.form['oi_u'])
         perception_u = float(request.form['perception_u'])
-        score_u=(tlr_u*0.3)+(rpc_u*0.3)+(go_u*0.2)+(oi_u*0.1)+(perception_u*0.1)
+        tlr1 = tlr_u * 100 / 82.4
+        rpc1 = rpc_u * 100 / 92.16
+        go1 = go_u * 100 / 100.0
+        oi1 =oi_u * 100 / 76.16
+        perception1 = perception_u * 100 / 100.0
+        score_u=(tlr1*0.3)+(rpc1*0.3)+(go1*0.2)+(oi1*0.1)+(perception1*0.1)
         data_u = np.array([score_u]).reshape(1,-1)
         pre_prediction_u=model_uni.fit_transform(data_u)
         my_prediction_u=model_uni1.predict(pre_prediction_u)
