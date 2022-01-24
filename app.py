@@ -384,8 +384,8 @@ import json
 
 #filename = 'rank_model.pkl'
 #filename1= 'polynomial_transform.pkl'
-filename = 'models/rank_model.pkl'
-filename1= 'models/polynomial_transform.pkl'
+filename = 'models/engg_rank_model.pkl'
+filename1= 'models/engg_polynomial_transform.pkl'
 model = pickle.load(open(filename, 'rb'))
 model1=pickle.load(open(filename1,'rb'))
 
@@ -406,18 +406,26 @@ class modify1:
     def find_range(self,num):
         if num<=0:
             return "2 (+/- 1)"
+        elif num<=20:
+            return str(num)+" (+/- 4)"
+        elif num<=40:
+            return str(num)+" (+/- 2)"
+        elif num<=60:
+            return str(num)+" (+/- 3)"
+        elif num<=80:
+            return str(num)+" (+/- 2)"
         elif num<=100:
-            return str(num)+" (+/- 3)"
+            return str(num)+" (+/- 1)"
         elif num <=120:
-            return str(num)+" (+/- 3)"
+            return str(num)+" (+/- 2)"
         elif num<=140:
-            return str(num)+" (+/- 7) " 
-        elif num<=170:
-            return str(num)+" (+/- 12) " 
+            return str(num)+" (+/- 9) " 
+        elif num<=160:
+            return str(num)+" (+/- 20) " 
         elif num<=180:
-            return str(num)+" (+/- 14) "
+            return str(num)+" (+/- 26) "
         else:
-            return str(num)+" (+/- 13) " 
+            return str(num)+" (+/- 34) " 
         
     def predict_rank_u(self,num):
         if num<0:
@@ -552,14 +560,19 @@ def predict():
     if request.method == 'POST':
         uni_clear()
         over_clear()
-        tlr = float(request.form['tlr'])
-        rpc = float(request.form['rpc'])
-        go = float(request.form['go'])
+        tlr = float(request.form['tlr']) 
+        rpc = float(request.form['rpc']) 
+        go = float(request.form['go']) 
         oi =float(request.form['oi'])
-        perception = float(request.form['ppn'])
+        perception = float(request.form['ppn']) 
+        tlr1 = tlr * 100 / 95.42
+        rpc1 = rpc * 100 / 96.15
+        go1 = go * 100 / 89.65
+        oi1 =oi * 100 / 75.7
+        perception1 = perception * 100 / 100.0
         sliderValues = request.form['sliderValues'].split(",")
 
-        score=(tlr*0.3)+(rpc*0.3)+(go*0.2)+(oi*0.1)+(perception*0.1)
+        score=(tlr1*0.3)+(rpc1*0.3)+(go1*0.2)+(oi1*0.1)+(perception1*0.1)
         data = np.array([score]).reshape(1,-1)
         pre_prediction=model1.fit_transform(data)
         my_prediction = model.predict(pre_prediction)
